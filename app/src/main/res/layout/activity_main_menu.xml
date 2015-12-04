@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="33dp" tools:context=".MainMenuActivity"
+    android:background="@drawable/mainmenu_background_v1">
+
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/settings_button"
+        android:background="@drawable/settings_button_v1"
+        android:onClick="openSettings"
+        android:layout_marginBottom="66dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/howtoplay_button"
+        android:layout_above="@+id/settings_button"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/howtoplay_button_v1"
+        android:onClick="OpenHowToPlay" />
+
+    <ImageButton
+        android:id="@+id/newgame_button"
+        android:layout_above="@id/howtoplay_button"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/newgame_button_v1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="openNewGame"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/troll_button"
+        android:background="@android:color/transparent"
+        android:onClick="playTroll"
+        android:minHeight="30dp"
+        android:minWidth="30dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/nyancat_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:onClick="playNyan"
+        android:height="50dp"
+        android:width="50dp"
+        android:layout_marginLeft="32dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <ImageButton
+        android:id="@+id/trophy_imagebutton"
+        android:layout_width="100dp"
+        android:layout_height="90dp"
+        android:background="@drawable/trophy_v1"
+        android:onClick="openHighScores"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_above="@+id/newgame_button" />
+
+</RelativeLayout>

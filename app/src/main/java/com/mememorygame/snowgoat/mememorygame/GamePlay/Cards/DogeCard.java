@@ -1,0 +1,36 @@
+package com.mememorygame.snowgoat.mememorygame.GamePlay.Cards;
+
+import android.app.Activity;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+
+import com.example.joona.mememorygame3000.GamePlay.AppUtils;
+import com.example.joona.mememorygame3000.R;
+
+import java.util.Collection;
+
+/**
+ * Created by Miika on 1.12.2015.
+ */
+public class DogeCard extends BasicCard {
+    public static final int IMAGE_NUMBER = 1;
+    private Animation pareFoundAnim;
+
+    public DogeCard(Collection<BasicCard> cards, Activity activity) {
+        super(cards, activity);
+        pareFoundAnim = AnimationUtils.loadAnimation(activity, R.anim.heiluminen);
+    }
+
+    @Override
+    public void setPareFound() {
+        AppUtils.vibrate(100, 100, 100, 50);
+        pareFound=true;
+        pare.pareFound=true;
+        imageButton.startAnimation(pareFoundAnim);
+        pare.imageButton.startAnimation(pareFoundAnim);
+        /*Runnable task = () -> {
+            //TODO tänne jotain ekstra juttuja ehkä
+        };
+        scheduledTask = new SingleRunScheduledTask(task, 900, activity);*/
+    }
+}

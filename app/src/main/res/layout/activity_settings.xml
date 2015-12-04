@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/settings_background_v1"
+    android:paddingLeft="60dp"
+    android:paddingRight="60dp">
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toggle in game music Off/On"
+        android:textColor="#b7f940"
+        android:id="@+id/music_switch"
+        android:switchPadding="39.5dp"
+        android:layout_marginTop="151dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Switch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toggle vibration of buttons Off/On"
+        android:textColor="#b7f940"
+        android:id="@+id/vibration_switch"
+        android:switchPadding="10dp"
+        android:layout_below="@+id/music_switch"
+        android:layout_alignLeft="@+id/music_switch"
+        android:layout_alignStart="@+id/music_switch"
+        android:layout_marginTop="23dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:background="@drawable/settings_header_v1"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowFullscreen">true</item>
+    </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="img_btn_5x6_style">
+        <item name="android:src">@drawable/memorycard_backimage</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="turncount_imageview_style">
+        <item name="android:layout_width">35dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:layout_margin">0dp</item>
+        <item name="android:src">@drawable/number_zero_v1</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+    <style name="time_imageview_style" parent="turncount_imageview_style">
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">40dp</item>
+    </style>
+</resources>

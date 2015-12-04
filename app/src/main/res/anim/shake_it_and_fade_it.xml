@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <!-- kummatkim animaatiot suoritetaan yhtä aikaisesti-->
+    <rotate
+        android:duration="100"
+        android:fromDegrees="-5"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:repeatCount="10"
+        android:repeatMode="reverse"
+        android:toDegrees="5" />
+
+    <alpha
+        android:fromAlpha="20"
+        android:toAlpha="0.1"
+        android:duration="1000"/>
+
+    <!-- animaatio aloittaa 1000ms jäljessä eli heti kun aikaisempi alpha on lopettanut-->
+    <alpha
+        android:fromAlpha="0.1"
+        android:startOffset="1000"
+        android:duration="1000"
+        android:toAlpha="20"/>
+
+</set>
