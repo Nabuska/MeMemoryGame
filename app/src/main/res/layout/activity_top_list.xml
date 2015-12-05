@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:layout_height="match_parent"
+    android:padding="16dp"
     android:background="@drawable/blue_background_v1"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-
     tools:context="com.example.joona.mememorygame3000.LeadersBoard.TopListActivity">
 
     <TabHost android:id="@+id/category_tab_host"
@@ -92,15 +89,18 @@
             android:textStyle="bold"
             android:textColor="#b7f940"
             android:layout_weight="2"
+            android:layout_gravity="center"
             style="@style/play_list_item_header_style"/>
         <TextView
             android:text="turns"
             android:textStyle="bold"
             android:layout_weight="1.2"
+            android:layout_gravity="center"
             android:textColor="#b7f940"
             style="@style/play_list_item_header_style" />
         <TextView
             android:text="bonus"
+            android:layout_gravity="center"
             android:textStyle="bold"
             android:textColor="#b7f940"
             android:layout_weight="2"

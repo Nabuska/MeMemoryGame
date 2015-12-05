@@ -2,19 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="11">
+    android:weightSum="11.1">
     <TextView
         android:id="@+id/row_number_listitem_textview"
         android:layout_weight="1"
-        android:paddingBottom="30sp"
+        android:paddingBottom="16sp"
         android:textSize="25sp"
         android:textColor="#b7f940"
         style="@style/play_list_item_style"
 
         />
     <TextView
+        android:text="name"
         android:layout_weight="3"
-        android:paddingBottom="30sp"
+        android:paddingBottom="16sp"
         android:textSize="18sp"
         android:textColor="#b7f940"
         android:id="@+id/name_listitem_textview"
@@ -23,34 +24,36 @@
     <TextView
         android:layout_weight="2"
         android:text="1232"
-        android:paddingBottom="30sp"
-        android:textSize="20sp"
+        android:paddingBottom="16sp"
+        android:textSize="18sp"
         android:textColor="#b7f940"
         android:id="@+id/score_listitem_textview"
         style="@style/play_list_item_style"
         />
     <TextView
         android:id="@+id/time_listitem_textview"
-        android:text="500000"
+        android:text="114501"
         android:textColor="#b7f940"
-        android:textSize="20sp"
-        android:layout_weight="2"
-        android:paddingBottom="30sp"
+        android:textSize="18sp"
+        android:layout_weight="2.1"
+        android:paddingBottom="16sp"
         style="@style/play_list_item_style"
         />
     <TextView
         android:id="@+id/turns_listitem_textview"
         android:text="999"
-        android:textSize="20sp"
+        android:textSize="18sp"
         android:textColor="#b7f940"
         android:layout_weight="1.6"
-        android:paddingBottom="30sp"
+        android:paddingBottom="16sp"
         style="@style/play_list_item_style"
         />
     <TextView
         android:id="@+id/bonus_listitem_textview"
         android:layout_weight="1.4"
+        android:textColor="#b7f940"
+        android:textSize="18sp"
         style="@style/play_list_item_style"
-        android:paddingBottom="30sp"
+        android:paddingBottom="16sp"
         />
 </LinearLayout>
