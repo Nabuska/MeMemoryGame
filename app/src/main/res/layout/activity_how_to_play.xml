@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="60dp"
+    android:paddingRight="60dp"
+    android:gravity="center_horizontal"
+    android:background="@drawable/simple_background_v1">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/how_to_play_header"
+            android:background="@drawable/howtoplay_header_v1"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The game is played just like any other memory game, but with a few exceptions listed below:"
+            android:textColor="#b7f940"
+            android:id="@+id/instructions_textview"
+            android:layout_below="@id/how_to_play_header"
+            android:layout_marginBottom="41dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Special cards:"
+            android:textColor="#b7f940"
+            android:textStyle="bold"
+            android:layout_below="@id/instructions_textview"
+            android:id="@+id/special_cards_textview"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/how_to_play_imageview_pedo"
+            android:background="@drawable/meme_bedobear_v1"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/special_cards_textview"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="After both are found, the pedobear will harass cards on each of its sides, exposing them for a short duration"
+            android:id="@+id/textView4"
+            android:textColor="#b7f940"
+            android:layout_toRightOf="@id/how_to_play_imageview_pedo"
+            android:layout_below="@id/special_cards_textview"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="13sp"
+            android:text="More special cards coming in future updates!"
+            android:layout_marginBottom="5dp"
+            android:textColor="#b7f940"
+            android:id="@+id/textView5" />
+    </RelativeLayout>
+</LinearLayout>
+

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:background="@drawable/blue_background_v1"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+
+    tools:context="com.example.joona.mememorygame3000.LeadersBoard.TopListActivity">
+
+    <TabHost android:id="@+id/category_tab_host"
+
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TabWidget android:id="@android:id/tabs"
+                android:background="#b7f940"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+            <FrameLayout android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <FrameLayout
+                    android:id="@+id/scores_tab"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+                <FrameLayout
+                    android:id="@+id/play_duration_tab"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+                <FrameLayout
+                    android:id="@+id/turn_count_tab"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+    <TabHost android:id="@+id/type_tab_host"
+        android:layout_below="@+id/category_tab_host"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TabWidget android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#b7f940"/>
+            <FrameLayout android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <FrameLayout
+                    android:id="@+id/wins_tab"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+                <FrameLayout
+                    android:id="@+id/fails_tab"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+    <LinearLayout
+        android:id="@+id/listview_descriptions"
+        android:layout_below="@id/type_tab_host"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:text="rank"
+            android:textStyle="bold"
+            android:textColor="#b7f940"
+            android:layout_weight="1"
+            style="@style/play_list_item_header_style" />
+        <TextView
+            android:text="name"
+            android:textStyle="bold"
+            android:textColor="#b7f940"
+            android:layout_weight="3"
+            style="@style/play_list_item_header_style" />
+        <TextView
+            android:text="scores"
+            android:textStyle="bold"
+            android:textColor="#b7f940"
+            android:layout_weight="2"
+            style="@style/play_list_item_header_style" />
+        <TextView
+            android:text="time"
+            android:textStyle="bold"
+            android:textColor="#b7f940"
+            android:layout_weight="2"
+            style="@style/play_list_item_header_style"/>
+        <TextView
+            android:text="turns"
+            android:textStyle="bold"
+            android:layout_weight="1.2"
+            android:textColor="#b7f940"
+            style="@style/play_list_item_header_style" />
+        <TextView
+            android:text="bonus"
+            android:textStyle="bold"
+            android:textColor="#b7f940"
+            android:layout_weight="2"
+            style="@style/play_list_item_header_style" />
+    </LinearLayout>
+    <ListView
+        android:id="@+id/leader_board_listview"
+        android:layout_below="@+id/listview_descriptions"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></ListView>
+</RelativeLayout>

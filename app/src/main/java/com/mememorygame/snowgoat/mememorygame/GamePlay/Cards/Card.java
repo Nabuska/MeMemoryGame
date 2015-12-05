@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageButton;
 
-import com.example.joona.mememorygame3000.GamePlay.AppUtils;
-import com.example.joona.mememorygame3000.GamePlay.GameActivity;
-import com.example.joona.mememorygame3000.GamePlay.SingleRunScheduledTask;
+import com.mememorygame.snowgoat.mememorygame.AppUtils;
+import com.mememorygame.snowgoat.mememorygame.GamePlay.GameActivity;
+import com.mememorygame.snowgoat.mememorygame.GamePlay.SingleRunScheduledTask;
 
 import java.util.Collection;
 import java.util.Observable;

@@ -4,8 +4,9 @@ import android.app.Activity;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-import com.example.joona.mememorygame3000.GamePlay.AppUtils;
-import com.example.joona.mememorygame3000.R;
+
+import com.mememorygame.snowgoat.mememorygame.AppUtils;
+import com.mememorygame.snowgoat.mememorygame.R;
 
 import java.util.Collection;
 

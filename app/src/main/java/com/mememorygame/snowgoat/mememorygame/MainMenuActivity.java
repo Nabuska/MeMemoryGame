@@ -6,6 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.mememorygame.snowgoat.mememorygame.GamePlay.GameActivity;
+import com.mememorygame.snowgoat.mememorygame.TopList.TopListActivity;
+
 
 public class MainMenuActivity extends AppCompatActivity implements MediaPlayer.OnCompletionListener {
     //TODO By Miika Lisätty implements OnComple... tänne
@@ -19,26 +22,26 @@ public class MainMenuActivity extends AppCompatActivity implements MediaPlayer.O
 
     public void onNewGameButtonClick(View view) {
         AppUtils.vibrate(new long[]{100, 50, 100});
-        //Intent uusipeli = new Intent(this, GameActivity.class);//TODO kommentti pois
-        //startActivity(uusipeli);
+        Intent uusipeli = new Intent(this, GameActivity.class);
+        startActivity(uusipeli);
     }
 
     public void onHowToPlayButtonClick(View view) {
         AppUtils.vibrate(new long[]{100, 50, 100});
-        //Intent kuinkaPelata = new Intent(this, HowToPlay.class);//TODO kommentti pois
-        //startActivity(kuinkaPelata);
+        Intent kuinkaPelata = new Intent(this, HowToPlayActivity.class);
+        startActivity(kuinkaPelata);
     }
 
     public void onSettingsButtonClick(View view) {
         AppUtils.vibrate(new long[]{100, 50, 100});
-        //Intent asetukset = new Intent(this, SettingsActivity.class);//TODO kommentti pois
-        //startActivity(asetukset);
+        Intent asetukset = new Intent(this, SettingsActivity.class);
+        startActivity(asetukset);
     }
 
     public void onTrophyButtonClick(View view) {
         AppUtils.vibrate(new long[]{100, 50, 100});
-        //Intent highScore = new Intent(this, TopListActivity.class);//TODO kommentti pois
-        //startActivity(highScore);
+        Intent highScore = new Intent(this, TopListActivity.class);
+        startActivity(highScore);
     }
 
     //TODO Tästä alaspäin Miikan aivopieruja

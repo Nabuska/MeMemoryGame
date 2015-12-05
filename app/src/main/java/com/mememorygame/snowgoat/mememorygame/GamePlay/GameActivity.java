@@ -34,6 +34,7 @@ import com.mememorygame.snowgoat.mememorygame.GamePlay.Cards.RageCard;
 import com.mememorygame.snowgoat.mememorygame.GamePlay.Cards.ThinkingCard;
 import com.mememorygame.snowgoat.mememorygame.GamePlay.Cards.TrollCard;
 import com.mememorygame.snowgoat.mememorygame.R;
+import com.mememorygame.snowgoat.mememorygame.TopList.TopListActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -118,7 +119,7 @@ public class GameActivity extends Activity {
                 .setIcon(R.drawable.meme_grumpy_v1)
                 .setPositiveButton("Continue", (d, id) -> {
                     d.dismiss();
-                    Intent topListIntent = new Intent(this, TopListActivity.class);//TODO integroi toplist
+                    Intent topListIntent = new Intent(this, TopListActivity.class);
                     topListIntent.putExtra("PLAY", play);
                     startActivity(topListIntent);
                     finish();
@@ -333,69 +334,4 @@ public class GameActivity extends Activity {
         AppUtils.releaseMediaPlayer();
         super.onDestroy();
     }
-
-    /*
-
-    private void onGameOver(){
-        Log.i("info", "game over");
-        long time = System.currentTimeMillis()-startTime;
-                new AlertDialog.Builder(this).setTitle("Scores")
-                .setMessage("Time: " + time + "\nTurns: " + turnCountTextView.getText())
-                .setCancelable(false)
-                .setPositiveButton("OK", (d, id) -> d.dismiss())
-                .create().show();
-    }
-
-         /*GRID_SIZE = getIntent().getIntExtra("GRID_SIZE", 0);
-
-        //...
-
-        switch (GRID_SIZE){
-            case GRID_SIZE_4X5: //then
-                //lataa layout 1 (muista myös tarkistaa GRID_SIZE kortteja luodessa)
-                break;
-            case GRID_SIZE_5X6: //then
-                //lataa layout 2 (muista myös tarkistaa GRID_SIZE kortteja luodessa)
-                break;
-            default:
-        }*/
-
-//    private void scale(ImageButton view)
-//    {
-//        Configuration configuration = this.getResources().getConfiguration();
-//        int screenWidthDp = configuration.screenWidthDp;
-//        // Get the ImageView and its bitmap
-//        Drawable drawing = view.getDrawable();
-//        Bitmap bitmap = ((BitmapDrawable)drawing).getBitmap();
-//
-//        // Get current dimensions
-//        int width = bitmap.getWidth();
-//        int height = bitmap.getHeight();
-//
-//        // Determine how much to scale: the dimension requiring less scaling is
-//        // closer to the its side. This way the image always stays inside your
-//        // bounding box AND either x/y axis touches it.
-//        float xScale = ((float) screenWidthDp) / width;
-//        float yScale = ((float) screenWidthDp) / height;
-//        float scale = (xScale <= yScale) ? xScale : yScale;
-//
-//        // Create a matrix for the scaling and add the scaling data
-//        Matrix matrix = new Matrix();
-//        matrix.postScale(scale, scale);
-//
-//        // Create a new bitmap and convert it to a format understood by the ImageView
-//        Bitmap scaledBitmap = Bitmap.createBitmap(bitmap, 0, 0, width, height, matrix, true);
-//        BitmapDrawable result = new BitmapDrawable(scaledBitmap);
-//        width = scaledBitmap.getWidth();
-//        height = scaledBitmap.getHeight();
-//
-//        // Apply the scaled bitmap
-//        view.setImageDrawable(result);
-//
-//        // Now change ImageView's dimensions to match the scaled image
-//        TableRow.LayoutParams params = (TableRow.LayoutParams) view.getLayoutParams();
-//        params.width = width;
-//        params.height = height;
-//        view.setLayoutParams(params);
-//    }
 }
