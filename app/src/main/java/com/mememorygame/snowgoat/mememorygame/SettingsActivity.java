@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class SettingsActivity extends AppCompatActivity {
 
@@ -21,8 +24,14 @@ public class SettingsActivity extends AppCompatActivity {
 
         Switch backgroundMusicSwitch = (Switch) findViewById(R.id.music_switch);
 
+        final TextView backGroundMusicStateIndicator = (TextView) findViewById(R.id.music_switch_indicator_textview);
+
         boolean backgroundMusicChecked = prefs.getBoolean(BACKGROUND_MUSIC, true);
         backgroundMusicSwitch.setChecked(backgroundMusicChecked);
+        if(backgroundMusicChecked)
+            backGroundMusicStateIndicator.setText("ON");
+        else
+            backGroundMusicStateIndicator.setText("OFF");
 
         final SharedPreferences.Editor edit = prefs.edit();
 
@@ -32,13 +41,23 @@ public class SettingsActivity extends AppCompatActivity {
                 edit.putBoolean(BACKGROUND_MUSIC, isChecked);
                 edit.commit();
                 AppUtils.vibrate(100, 50, 100);
+                if(isChecked)
+                    backGroundMusicStateIndicator.setText("ON");
+                else
+                    backGroundMusicStateIndicator.setText("OFF");
             }
         });
 
         Switch vibratorOnSwitch = (Switch) findViewById(R.id.vibration_switch);
+        final TextView vibratorStateIndicator = (TextView) findViewById(R.id.vibrator_switch_indicator_textview);
 
         boolean vibratorOnChecked = prefs.getBoolean(VIBRATOR, true);
         vibratorOnSwitch.setChecked(vibratorOnChecked);
+
+        if(vibratorOnChecked)
+            vibratorStateIndicator.setText("ON");
+        else
+            vibratorStateIndicator.setText("OFF");
 
         vibratorOnSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -46,6 +65,10 @@ public class SettingsActivity extends AppCompatActivity {
                 edit.putBoolean(VIBRATOR, isChecked);
                 edit.commit();
                 AppUtils.vibrate(100, 50, 100);
+                if(isChecked)
+                    vibratorStateIndicator.setText("ON");
+                else
+                    vibratorStateIndicator.setText("OFF");
             }
         });
     }

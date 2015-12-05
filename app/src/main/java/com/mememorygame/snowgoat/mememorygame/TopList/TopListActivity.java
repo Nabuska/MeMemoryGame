@@ -107,7 +107,7 @@ public class TopListActivity extends AppCompatActivity {
 
         TabHost.TabSpec turnCountTabSpec = categoryTabHost.newTabSpec(TURNS_TAB_ID);
         turnCountTabSpec.setContent(R.id.play_duration_tab);
-        turnCountTabSpec.setIndicator("Turns");
+        turnCountTabSpec.setIndicator("", getResources().getDrawable(R.drawable.meme_bedobear_v1));
         categoryTabHost.addTab(turnCountTabSpec);
 
         categoryTabHost.setOnTabChangedListener(id -> {

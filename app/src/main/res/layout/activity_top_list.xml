@@ -14,7 +14,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TabWidget android:id="@android:id/tabs"
-                android:background="#b7f940"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content" />
             <FrameLayout android:id="@android:id/tabcontent"
@@ -44,8 +43,7 @@
             android:orientation="vertical">
             <TabWidget android:id="@android:id/tabs"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:background="#b7f940"/>
+                android:layout_height="wrap_content"/>
             <FrameLayout android:id="@android:id/tabcontent"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content">
