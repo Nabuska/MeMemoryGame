@@ -51,7 +51,6 @@ public class Play implements Comparable<Play>, Serializable {
         if(dif == 0){
             dif= s2.compareTo(s1);
         }
-
         return dif;
     };
     public static Comparator<Play> worstTurnsComparator = (s1, s2) -> {
@@ -59,7 +58,6 @@ public class Play implements Comparable<Play>, Serializable {
         if(dif == 0){
             dif = s2.compareTo(s1);
         }
-
         return dif;
     };
 

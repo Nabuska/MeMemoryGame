@@ -165,6 +165,8 @@ public class GameActivity extends Activity {
 
 
         int height = (int)Math.round(width * 1.2);//(int)Math.round(Math.sqrt(Math.pow(width,2)+Math.pow(catetY,2)))+1;
+        //tableLayout.setClipChildren(false);
+        //tableLayout.setClipToPadding(false);
 
         Random random = new Random();
         for (int y = 0; y < ROWS; y++) {
@@ -172,7 +174,8 @@ public class GameActivity extends Activity {
             TableRow.LayoutParams tableRowLayoutParams = new TableRow.LayoutParams(TableRow.LayoutParams.MATCH_PARENT);
             tableRow.setLayoutParams(tableRowLayoutParams);
             tableRow.setHorizontalGravity(Gravity.CENTER);
-            //Animation animation = AnimationUtils.loadAnimation(this, R.anim.shake_it_and_fade_it);
+            //tableRow.setClipChildren(false);
+            //tableRow.setClipToPadding(false);
 
             for (int x = 0; x < COLUMNS; x++) {
                 ImageButton imageButton = new ImageButton(this, null, R.style.img_btn_5x6_style);

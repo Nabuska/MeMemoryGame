@@ -46,28 +46,21 @@ public class CustomTopListAdapter extends ArrayAdapter<Play> {
             convertView = inflater.inflate(layout,parent,false);
             ListItemHolder holder = new ListItemHolder();
             holder.row = (TextView) convertView.findViewById(R.id.row_number_listitem_textview);
-            holder.row.setText(1+position+".");
             holder.name= (TextView) convertView.findViewById(R.id.name_listitem_textview);
-            holder.name.setText(play.name);
             holder.scores=(TextView)convertView.findViewById(R.id.score_listitem_textview);
-            holder.scores.setText(String.valueOf(play.getScore()));
             holder.time = (TextView)convertView.findViewById(R.id.time_listitem_textview);
-            holder.time.setText(String.valueOf(play.gameDuration));
             holder.turns= (TextView)convertView.findViewById(R.id.turns_listitem_textview);
-            holder.turns.setText(String.valueOf(play.turnCount));
             holder.bonus= (TextView)convertView.findViewById(R.id.bonus_listitem_textview);
-            holder.bonus.setText(String.valueOf(play.bonus));
             convertView.setTag(holder);
         }
-        else{
-            viewHolder = (ListItemHolder) convertView.getTag();
-            viewHolder.row.setText(1+position+".");
-            viewHolder.name.setText(play.name);
-            viewHolder.scores.setText(String.valueOf(play.getScore()));
-            viewHolder.time.setText(String.valueOf(play.gameDuration));
-            viewHolder.turns.setText(String.valueOf(play.turnCount));
-            viewHolder.bonus.setText(String.valueOf(play.bonus));
-        }
+        viewHolder = (ListItemHolder) convertView.getTag();
+        viewHolder.row.setText(1+position+".");
+        viewHolder.name.setText(play.name);
+        viewHolder.scores.setText(String.valueOf(play.getScore()));
+        viewHolder.time.setText(String.valueOf(play.gameDuration));
+        viewHolder.turns.setText(String.valueOf(play.turnCount));
+        viewHolder.bonus.setText(String.valueOf(play.bonus));
+
         return convertView;
     }
 
