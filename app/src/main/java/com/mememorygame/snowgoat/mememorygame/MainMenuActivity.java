@@ -17,25 +17,25 @@ public class MainMenuActivity extends AppCompatActivity implements MediaPlayer.O
         AppUtils.init(this);
     }
 
-    public void openNewGame(View view) {
+    public void onNewGameButtonClick(View view) {
         AppUtils.vibrate(new long[]{100, 50, 100});
         //Intent uusipeli = new Intent(this, GameActivity.class);//TODO kommentti pois
         //startActivity(uusipeli);
     }
 
-    public void OpenHowToPlay(View view) {
+    public void onHowToPlayButtonClick(View view) {
         AppUtils.vibrate(new long[]{100, 50, 100});
         //Intent kuinkaPelata = new Intent(this, HowToPlay.class);//TODO kommentti pois
         //startActivity(kuinkaPelata);
     }
 
-    public void openSettings(View view) {
+    public void onSettingsButtonClick(View view) {
         AppUtils.vibrate(new long[]{100, 50, 100});
         //Intent asetukset = new Intent(this, SettingsActivity.class);//TODO kommentti pois
         //startActivity(asetukset);
     }
 
-    public void openHighScores(View view) {
+    public void onTrophyButtonClick(View view) {
         AppUtils.vibrate(new long[]{100, 50, 100});
         //Intent highScore = new Intent(this, TopListActivity.class);//TODO kommentti pois
         //startActivity(highScore);
@@ -45,26 +45,15 @@ public class MainMenuActivity extends AppCompatActivity implements MediaPlayer.O
     MediaPlayer mp;
     int pain1 = 0;
 
-    public void playNyan(View view) {
+    //Easter egg
+    private int nyanClickCount = 0;
+    public void onNyanButtonClick(View view) {
         AppUtils.vibrate(new long[]{100, 50, 100});
-        this.pain1++;
-        if (pain1 == 5) {
+        this.nyanClickCount++;
+        if (nyanClickCount == 5) {
             mp = MediaPlayer.create(getApplicationContext(), R.raw.nyan);
             mp.start();
-            pain1 = 0;
-            mp.setOnCompletionListener(this);
-        }
-    }
-
-    int pain2 = 0;
-
-    public void PlayTroll(View view) {
-        AppUtils.vibrate(new long[]{100, 50, 100});
-        this.pain2++;
-        if (pain2 == 5) {
-            mp = MediaPlayer.create(getApplicationContext(), R.raw.troll);
-            mp.start();
-            pain2 = 0;
+            nyanClickCount = 0;
             mp.setOnCompletionListener(this);
         }
     }
@@ -72,5 +61,18 @@ public class MainMenuActivity extends AppCompatActivity implements MediaPlayer.O
     @Override
     public void onCompletion(MediaPlayer mp) {
         mp.release();
+    }
+
+    //Easter egg
+    private int trollClickCount = 0;
+    public void onTrollButtonClick(View view) {
+        AppUtils.vibrate(new long[]{100, 50, 100});
+        this.trollClickCount++;
+        if (trollClickCount == 5) {
+            mp = MediaPlayer.create(getApplicationContext(), R.raw.troll);
+            mp.start();
+            trollClickCount = 0;
+            mp.setOnCompletionListener(this);
+        }
     }
 }
