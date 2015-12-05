@@ -57,7 +57,7 @@ public class CustomTopListAdapter extends ArrayAdapter<Play> {
         viewHolder.row.setText(1+position+".");
         viewHolder.name.setText(play.name);
         viewHolder.scores.setText(String.valueOf(play.getScore()));
-        viewHolder.time.setText(String.valueOf(play.gameDuration));
+        viewHolder.time.setText(String.valueOf(play.gameDuration)); //TODO pitäisikö aika näyttöö sekuntteina
         viewHolder.turns.setText(String.valueOf(play.turnCount));
         viewHolder.bonus.setText(String.valueOf(play.bonus));
 

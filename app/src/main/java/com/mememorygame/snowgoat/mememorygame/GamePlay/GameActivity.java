@@ -120,7 +120,7 @@ public class GameActivity extends Activity {
                 .setPositiveButton("Continue", (d, id) -> {
                     d.dismiss();
                     Intent topListIntent = new Intent(this, TopListActivity.class);
-                    topListIntent.putExtra("PLAY", play);
+                    topListIntent.putExtra(TopListActivity.PLAY_INTENT_EXTRA, play);
                     startActivity(topListIntent);
                     finish();
                 })

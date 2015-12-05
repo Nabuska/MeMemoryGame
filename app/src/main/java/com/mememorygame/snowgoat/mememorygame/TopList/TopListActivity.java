@@ -20,6 +20,9 @@ import java.util.List;
 import java.util.Map;
 
 public class TopListActivity extends AppCompatActivity {
+
+    public static final String PLAY_INTENT_EXTRA = "PLAY_INTENT_EXTRA";
+
     private final String SCORES_TAB = "SCORES_TAB", DURATIONS_TAB = "DURATIONS_TAB", TURNS_TAB = "TURNS_TAB";
     private final String WINS_TAB = "WINS_TAB", FAILS_TAB = "FAILS_TAB";
     private final int SCORES_TAB_INDEX = 0, DURATIONS_TAB_INDEX = 1, TURNS_TAB_INDEX = 2;
@@ -39,11 +42,11 @@ public class TopListActivity extends AppCompatActivity {
         if(topPlays == null){
             topPlays = dataHandling.load();
 
-            Play latestPlay = (Play) getIntent().getSerializableExtra("PLAY");
+            Play latestPlay = (Play) getIntent().getSerializableExtra(PLAY_INTENT_EXTRA);
             boolean changesMade = false;
             if(latestPlay!=null) {
 
-                getIntent().removeExtra("PLAY");
+                getIntent().removeExtra(PLAY_INTENT_EXTRA);
 
                 if (latestPlay.belongsToBestScorePlays(topPlays.get(Play.BEST_SCORE))) {
                     topPlays.get(Play.BEST_SCORE).add(latestPlay);
