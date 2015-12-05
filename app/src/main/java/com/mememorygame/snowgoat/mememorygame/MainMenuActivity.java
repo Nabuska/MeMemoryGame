@@ -63,6 +63,7 @@ public class MainMenuActivity extends AppCompatActivity implements MediaPlayer.O
 
     @Override
     public void onCompletion(MediaPlayer mp) {
+        mp.reset();
         mp.release();
     }
 
