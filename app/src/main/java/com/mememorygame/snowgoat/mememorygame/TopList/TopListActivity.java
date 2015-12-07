@@ -2,6 +2,7 @@ package com.mememorygame.snowgoat.mememorygame.TopList;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
@@ -113,16 +114,18 @@ public class TopListActivity extends AppCompatActivity {
 
     private void initTypeTabHost() {
         typeTabHost = (TabHost)findViewById(R.id.type_tab_host);
+/*        Intent intent;
+        intent = new Intent().setClass(this, TopListActivity.class);*/
         typeTabHost.setup();
 
         TabHost.TabSpec winTab = typeTabHost.newTabSpec(WINS_TAB);
         winTab.setContent(R.id.wins_tab);
-        winTab.setIndicator("Wins");
+        winTab.setIndicator("", getResources().getDrawable(R.drawable.wins_selector));
         typeTabHost.addTab(winTab);
 
         TabHost.TabSpec failTab = typeTabHost.newTabSpec(FAILS_TAB);
         failTab.setContent(R.id.fails_tab);
-        failTab.setIndicator("Fails");
+        failTab.setIndicator("", getResources().getDrawable(R.drawable.fails_selector));
         typeTabHost.addTab(failTab);
         typeTabHost.setOnTabChangedListener(id -> {
             if (id.equals(FAILS_TAB)) {
@@ -143,17 +146,17 @@ public class TopListActivity extends AppCompatActivity {
 
         TabHost.TabSpec scoresTabSpec = categoryTabHost.newTabSpec(SCORES_TAB);
         scoresTabSpec.setContent(R.id.scores_tab);
-        scoresTabSpec.setIndicator("Scores");
+        scoresTabSpec.setIndicator("", getResources().getDrawable(R.drawable.score_selector));
         categoryTabHost.addTab(scoresTabSpec);
 
         TabHost.TabSpec gameDurationTabSpec = categoryTabHost.newTabSpec(DURATIONS_TAB);
         gameDurationTabSpec.setContent(R.id.play_duration_tab);
-        gameDurationTabSpec.setIndicator("Durations");
+        gameDurationTabSpec.setIndicator("", getResources().getDrawable(R.drawable.time_selector));
         categoryTabHost.addTab(gameDurationTabSpec);
 
         TabHost.TabSpec turnCountTabSpec = categoryTabHost.newTabSpec(TURNS_TAB);
         turnCountTabSpec.setContent(R.id.play_duration_tab);
-        turnCountTabSpec.setIndicator("", getResources().getDrawable(R.drawable.meme_bedobear_v1));
+        turnCountTabSpec.setIndicator("", getResources().getDrawable(R.drawable.turns_selector));
         categoryTabHost.addTab(turnCountTabSpec);
 
         categoryTabHost.setOnTabChangedListener(id -> {
