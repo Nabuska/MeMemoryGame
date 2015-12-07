@@ -22,6 +22,8 @@ public class AppUtils {
     private AppUtils(){}
 
     public static void setMediaPlayer(MediaPlayer mediaPlayer){
+        if(AppUtils.mediaPlayer!=null)
+            AppUtils.mediaPlayer.release();
         AppUtils.mediaPlayer = mediaPlayer;
         mediaPlayer.setLooping(true);
     }
@@ -36,6 +38,10 @@ public class AppUtils {
                 switch (key){
                     case SettingsActivity.BACKGROUND_MUSIC:
                         musicOn = sharedPreferences.getBoolean(key, true);
+                        if (musicOn)
+                            mediaPlayer.start();
+                        else
+                            pauseMediaPlayer();
                         break;
                     case SettingsActivity.VIBRATOR:
                         vibratorOn = sharedPreferences.getBoolean(key,true);
@@ -52,7 +58,7 @@ public class AppUtils {
     }
 
     public static void startMediaPlayer(){
-        if(musicOn)
+        if(musicOn && !mediaPlayer.isPlaying())
             mediaPlayer.start();
     }
 
@@ -62,14 +68,21 @@ public class AppUtils {
     }
 
     public static void releaseMediaPlayer(){
-        if(mediaPlayer.isPlaying())
+        if(mediaPlayer!=null) {
+            Log.i("myMediaPlayer", "release");
             mediaPlayer.stop();
-        mediaPlayer.reset();
-        mediaPlayer.release();
+            mediaPlayer.reset();
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 
     public static void vibrate(long... pattern){
         if(vibratorOn)
             vibrator.vibrate(pattern, -1);
+    }
+
+    public static boolean musicIsPlaying(){
+        return mediaPlayer!=null && mediaPlayer.isPlaying();
     }
 }

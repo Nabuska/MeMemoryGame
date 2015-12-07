@@ -1,8 +1,11 @@
 package com.mememorygame.snowgoat.mememorygame;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -28,7 +31,7 @@ public class SettingsActivity extends AppCompatActivity {
 
         boolean backgroundMusicChecked = prefs.getBoolean(BACKGROUND_MUSIC, true);
         backgroundMusicSwitch.setChecked(backgroundMusicChecked);
-        if(backgroundMusicChecked)
+        if (backgroundMusicChecked)
             backGroundMusicStateIndicator.setText("ON");
         else
             backGroundMusicStateIndicator.setText("OFF");
@@ -41,7 +44,7 @@ public class SettingsActivity extends AppCompatActivity {
                 edit.putBoolean(BACKGROUND_MUSIC, isChecked);
                 edit.commit();
                 AppUtils.vibrate(100, 50, 100);
-                if(isChecked)
+                if (isChecked)
                     backGroundMusicStateIndicator.setText("ON");
                 else
                     backGroundMusicStateIndicator.setText("OFF");
@@ -54,7 +57,7 @@ public class SettingsActivity extends AppCompatActivity {
         boolean vibratorOnChecked = prefs.getBoolean(VIBRATOR, true);
         vibratorOnSwitch.setChecked(vibratorOnChecked);
 
-        if(vibratorOnChecked)
+        if (vibratorOnChecked)
             vibratorStateIndicator.setText("ON");
         else
             vibratorStateIndicator.setText("OFF");
@@ -65,11 +68,18 @@ public class SettingsActivity extends AppCompatActivity {
                 edit.putBoolean(VIBRATOR, isChecked);
                 edit.commit();
                 AppUtils.vibrate(100, 50, 100);
-                if(isChecked)
+                if (isChecked)
                     vibratorStateIndicator.setText("ON");
                 else
                     vibratorStateIndicator.setText("OFF");
             }
         });
+    }
+
+    public void takaisinSettings(View view) {
+        AppUtils.vibrate(100, 50, 100);
+        MainMenuActivity.mp = MediaPlayer.create(getApplicationContext(), R.raw.button_sound);
+        MainMenuActivity.mp.start();
+        finish();
     }
 }

@@ -67,9 +67,19 @@
             android:layout_centerHorizontal="true"
             android:textSize="13sp"
             android:text="More special cards coming in future updates!"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="100dp"
             android:textColor="#b7f940"
             android:id="@+id/textView5" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/return_h2p"
+            android:onClick="backFromH2p"
+            android:background="@drawable/return_painike"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp" />
     </RelativeLayout>
 </LinearLayout>
 

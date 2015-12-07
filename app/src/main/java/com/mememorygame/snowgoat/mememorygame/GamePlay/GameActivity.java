@@ -33,6 +33,7 @@ import com.mememorygame.snowgoat.mememorygame.GamePlay.Cards.PepeCard;
 import com.mememorygame.snowgoat.mememorygame.GamePlay.Cards.RageCard;
 import com.mememorygame.snowgoat.mememorygame.GamePlay.Cards.ThinkingCard;
 import com.mememorygame.snowgoat.mememorygame.GamePlay.Cards.TrollCard;
+import com.mememorygame.snowgoat.mememorygame.MainMenuActivity;
 import com.mememorygame.snowgoat.mememorygame.R;
 import com.mememorygame.snowgoat.mememorygame.TopList.TopListActivity;
 
@@ -70,7 +71,6 @@ public class GameActivity extends Activity {
 
         durationEvaluator = new PlayDurationEvaluator();
         //MediaPlayer.create(this, R.raw.theme).start();
-        AppUtils.setMediaPlayer(MediaPlayer.create(this, R.raw.theme));
         backImage = getResources().getDrawable(R.drawable.memorycard_backimage);
 
         initDigitImageViews();
@@ -334,7 +334,6 @@ public class GameActivity extends Activity {
 
     @Override
     protected void onDestroy() {
-        AppUtils.releaseMediaPlayer();
         super.onDestroy();
     }
 }
