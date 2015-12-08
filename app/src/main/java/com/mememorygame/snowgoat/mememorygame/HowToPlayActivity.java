@@ -13,7 +13,7 @@ public class HowToPlayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_how_to_play);
     }
 
-    public void backFromH2p(View view) {
+    public void onReturnButtonClick(View view) {
         AppUtils.vibrate(100, 50, 100);
         MainMenuActivity.mp = MediaPlayer.create(getApplicationContext(), R.raw.button_sound);
         MainMenuActivity.mp.start();

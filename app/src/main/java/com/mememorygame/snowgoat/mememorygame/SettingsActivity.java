@@ -76,7 +76,7 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
-    public void takaisinSettings(View view) {
+    public void onReturnButtonClick(View view) {
         AppUtils.vibrate(100, 50, 100);
         MainMenuActivity.mp = MediaPlayer.create(getApplicationContext(), R.raw.button_sound);
         MainMenuActivity.mp.start();

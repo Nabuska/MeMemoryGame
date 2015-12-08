@@ -3,6 +3,7 @@ package com.mememorygame.snowgoat.mememorygame.TopList;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
@@ -13,6 +14,7 @@ import android.widget.TabHost;
 
 import com.mememorygame.snowgoat.mememorygame.AppUtils;
 import com.mememorygame.snowgoat.mememorygame.GamePlay.Play;
+import com.mememorygame.snowgoat.mememorygame.MainMenuActivity;
 import com.mememorygame.snowgoat.mememorygame.R;
 import com.mememorygame.snowgoat.mememorygame.SavingAndLoading;
 
@@ -92,6 +94,8 @@ public class TopListActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         latestPlay.name = input.getText().toString();
+                        if(latestPlay.name.length()>9)
+                            latestPlay.name = latestPlay.name.substring(0,8);
                         dataHandling.save(topPlays);
                         loadListViewWith(SCORES_TAB, WINS_TAB);
                     }
@@ -207,5 +211,12 @@ public class TopListActivity extends AppCompatActivity {
         listAdapter.setCompator(comparator);
         listviewContent.addAll(topPlays.get(contentType));
         listAdapter.notifyDataSetChanged();
+    }
+
+    public void onReturnButtonClick(View view) {
+        AppUtils.vibrate(100, 50, 100);
+        MainMenuActivity.mp = MediaPlayer.create(getApplicationContext(), R.raw.button_sound);
+        MainMenuActivity.mp.start();
+        finish();
     }
 }

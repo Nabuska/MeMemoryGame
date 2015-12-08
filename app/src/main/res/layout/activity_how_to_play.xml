@@ -72,11 +72,11 @@
             android:id="@+id/textView5" />
 
         <ImageButton
+            android:id="@+id/return_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/return_h2p"
-            android:onClick="backFromH2p"
-            android:background="@drawable/return_painike"
+            android:onClick="onReturnButtonClick"
+            android:background="@drawable/return_button"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp" />
