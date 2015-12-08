@@ -19,4 +19,16 @@ public class HowToPlayActivity extends AppCompatActivity {
         MainMenuActivity.mp.start();
         finish();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        AppUtils.startMediaPlayer();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        AppUtils.pauseMediaPlayer();
+    }
 }

@@ -21,15 +21,19 @@ public class MainMenuActivity extends AppCompatActivity implements MediaPlayer.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         AppUtils.init(this);
+        AppUtils.setMediaPlayer(MediaPlayer.create(getApplicationContext(), R.raw.theme));
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if(!AppUtils.musicIsPlaying()){
-            AppUtils.setMediaPlayer(MediaPlayer.create(getApplicationContext(), R.raw.theme));
-            AppUtils.startMediaPlayer();
-        }
+        AppUtils.startMediaPlayer();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        AppUtils.pauseMediaPlayer();
     }
 
     public void onNewGameButtonClick(View view) {

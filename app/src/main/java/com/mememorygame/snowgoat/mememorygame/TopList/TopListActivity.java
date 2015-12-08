@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TabHost;
 
+import com.mememorygame.snowgoat.mememorygame.AppUtils;
 import com.mememorygame.snowgoat.mememorygame.GamePlay.Play;
 import com.mememorygame.snowgoat.mememorygame.R;
 import com.mememorygame.snowgoat.mememorygame.SavingAndLoading;
@@ -110,6 +111,13 @@ public class TopListActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        AppUtils.startMediaPlayer();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        AppUtils.pauseMediaPlayer();
     }
 
     private void initTypeTabHost() {
