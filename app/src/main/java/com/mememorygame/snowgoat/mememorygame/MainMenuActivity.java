@@ -37,7 +37,7 @@ public class MainMenuActivity extends AppCompatActivity implements MediaPlayer.O
     }
 
     public void onNewGameButtonClick(View view) {
-        AppUtils.vibrate(new long[]{100, 50, 100});
+        AppUtils.vibrate(100, 50, 100);
         playSound(R.raw.button_sound);
         Intent uusipeli = new Intent(this, GameActivity.class);
         startActivity(uusipeli);
@@ -51,14 +51,14 @@ public class MainMenuActivity extends AppCompatActivity implements MediaPlayer.O
     }
 
     public void onSettingsButtonClick(View view) {
-        AppUtils.vibrate(new long[]{100, 50, 100});
+        AppUtils.vibrate(100, 50, 100);
         Intent asetukset = new Intent(this, SettingsActivity.class);
         playSound(R.raw.button_sound);
         startActivity(asetukset);
     }
 
     public void onTrophyButtonClick(View view) {
-        AppUtils.vibrate(new long[]{100, 50, 100});
+        AppUtils.vibrate(100, 50, 100);
         Intent highScore = new Intent(this, TopListActivity.class);
         playSound(R.raw.pair_sound);
         startActivity(highScore);
@@ -75,7 +75,7 @@ public class MainMenuActivity extends AppCompatActivity implements MediaPlayer.O
     //Easter egg
     private int nyanClickCount = 0;
     public void onNyanButtonClick(View view) {
-        AppUtils.vibrate(new long[]{100, 50, 100});
+        AppUtils.vibrate(100, 50, 100);
         this.nyanClickCount++;
         if (nyanClickCount == 5) {
             playSound(R.raw.nyan);
@@ -86,7 +86,7 @@ public class MainMenuActivity extends AppCompatActivity implements MediaPlayer.O
     //Easter egg
     private int trollClickCount = 0;
     public void onTrollButtonClick(View view) {
-        AppUtils.vibrate(new long[]{100, 50, 100});
+        AppUtils.vibrate(100, 50, 100);
         this.trollClickCount++;
         if (trollClickCount == 5) {
             playSound(R.raw.troll);
